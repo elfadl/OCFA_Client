@@ -12,8 +12,8 @@
 			<div class="page-title">
 				
 				<div class="title-env">
-					<h1 class="title">Retrive Data</h1>
-					<p class="description">Mengambil data identitas melalui NIK</p>
+					<h1 class="title">CRUD</h1>
+					<p class="description">Olah data identitas melalui NIK</p>
 				</div>
 			</div>
 			<div class="row">
@@ -22,80 +22,197 @@
 						<div class="panel-heading">
 						<h3 class="panel-title">OCFA System</h3>
 						</div>
-						<div class="panel-body">
-							<div class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-2 control-label" for="field-1">NIK</label>
-									<div class="col-sm-10">
-										<input class="form-control" name="nik" id="field-1" type="text" required>
+						<div class="row">
+							<div class="col-md-12">
+								<ul class="nav nav-tabs nav-tabs-justified">
+									<li class="active">
+										<a href="#retrive" id="retrive_data" data-toggle="tab">
+											<span class="visible-xs">
+												<i class="fa-home"></i>
+											</span>
+											<span class="hidden-xs">Retrive</span>
+										</a>
+									</li>
+									<li>
+										<a href="#update" id="update_data" data-toggle="tab">
+											<span class="visible-xs">
+												<i class="fa-home"></i>
+											</span>
+											<span class="hidden-xs">Update</span>
+										</a>
+									</li>
+									<li>
+										<a href="#input" id="input_data" data-toggle="tab">
+											<span class="visible-xs">
+												<i class="fa-home"></i>
+											</span>
+											<span class="hidden-xs">Input</span>
+										</a>
+									</li>
+								</ul>
+								<div class="tab-content">
+									<div class="tab-pane" id="retrive">
+										<div>
+											<div class="panel-body">
+												<div class="form-horizontal" role="form">
+													<div class="form-group">
+														<label class="col-sm-2 control-label" for="field-1">NIK</label>
+														<div class="col-sm-10">
+															<input class="form-control" name="nik" id="field-1" type="text" required>
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-sm-2 control-label" for="field-1">Token</label>
+														<div class="col-sm-10">
+															<input class="form-control" name="token" id="field-1" type="text" required>
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-sm-2 control-label" for="field-1">Field</label>
+														<div class="col-sm-10">
+															<div class="checkbox">
+																<label>
+																	<input type="checkbox" id="nama" name="nama" value="nama">Nama
+																</label>
+															</div>
+															<div class="checkbox">
+																<label>
+																	<input type="checkbox" id="t_lahir" name="t_lahir" value="t_lahir">Tempat Lahir
+																</label>
+															</div>
+															<div class="checkbox">
+																<label>
+																	<input type="checkbox" id="tgl_lahir" name="tgl_lahir" value="tgl_lahir">Tanggal Lahir
+																</label>
+															</div>
+															<div class="checkbox">
+																<label>
+																	<input type="checkbox" id="jk" name="jk" value="jk">Jenis Kelamin
+																</label>
+															</div>
+															<div class="checkbox">
+																<label>
+																	<input type="checkbox" id="goldar" name="goldar" value="goldar">Golongan Darah
+																</label>
+															</div>
+															<div class="checkbox">
+																<label>
+																	<input type="checkbox" id="tgl_terbit" name="tgl_terbit" value="tgl_terbit">Tanggal Diterbitkan
+																</label>
+															</div>
+															<div class="checkbox">
+																<label>
+																	<input type="checkbox" id="nip_pencatat" name="nip_pencatat" value="nip_pencatat">NIP Pencatat
+																</label>
+															</div>
+															<div class="checkbox">
+																<label>
+																	<input type="checkbox" id="nip_pencatat" name="nip_pencatat" value="nip_pencatat">Kewarganegaraan
+																</label>
+															</div>
+															<div class="checkbox">
+																<label>
+																	<input type="checkbox" id="agama" name="agama" value="agama">Agama
+																</label>
+															</div>
+															<div class="checkbox">
+																<label>
+																	<input type="checkbox" id="pend_terakhir" name="pendidikan_terakhir" value="pendidikan_terakhir">Pendidikan Terakhir
+																</label>
+															</div>
+															<div class="checkbox">
+																<label>
+																	<input type="checkbox" id="pekerjaan" name="pekerjaan" value="pekerjaan">Pekerjaan
+																</label>
+															</div>
+															<div class="checkbox">
+																<label>
+																	<input type="checkbox" id="status_kawin" name="status_kawin" value="status_kawin">Status Perkawinan
+																</label>
+															</div>
+															<div class="checkbox">
+																<label>
+																	<input type="checkbox" id="alamat" name="alamat" value="alamat">Alamat
+																</label>
+															</div>
+															<div class="checkbox">
+																<label>
+																	<input type="checkbox" id="alamat_advanced" name="alamat_advanced" value="alamat_advanced">Alamat Advanced
+																</label>
+															</div>
+														</div>
+													</div>
+													<div class="form-group">
+														<button class="btn btn-single pull-right" style="color:#ffffff; background-color:#ff0000; border-color:#ff0000;" id="submit" name="submit" >Submit</button>
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label" for="field-1">Token</label>
-									<div class="col-sm-10">
-										<input class="form-control" name="token" id="field-1" type="text" required>
+									<div class="tab-pane" id="update">
+										<div class="panel-body">
+											<div class="form-horizontal" role="form">
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">NIK</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="nik" id="field-1" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Token</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="token" id="field-1" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Nama</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="nama" id="nama" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Tempat Lahir</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="t_lahir" id="t_lahir" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Tanggal Lahir</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="tgl_lahir" id="tgl_lahir" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Jenis Kelamin</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="jk" id="jk" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Agama</label>
+													<div class="col-sm-10">
+														<select name="agama" id="agama">
+															<option disabled selected></option>
+															<option value="islam">Islam</option>
+															<option value="kristen">Kristen</option>
+															<option value="katholik">Katholik</option>
+															<option value="hindu">Hindu</option>
+															<option value="budha">Budha</option>
+															<option value="konghucu">Konghucu</option>
+															<option value="lainnya">Lainnya</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group">
+													<button class="btn btn-single pull-right" style="color:#ffffff; background-color:#ff0000; border-color:#ff0000;" id="submit" name="submit" >Submit</button>
+												</div>
+											</div>
+										</div>
 									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label" for="field-1">Field</label>
-									<div class="col-sm-10">
-										<div class="checkbox">
-											<label>
-												<input type="checkbox" id="nama" name="nama" value="nama">Nama
-											</label>
-										</div>
-										<div class="checkbox">
-											<label>
-												<input type="checkbox" id="t_lahir" name="t_lahir" value="t_lahir">Tempat Lahir
-											</label>
-										</div>
-										<div class="checkbox">
-											<label>
-												<input type="checkbox" id="tgl_lahir" name="tgl_lahir" value="tgl_lahir">Tanggal Lahir
-											</label>
-										</div>
-										<div class="checkbox">
-											<label>
-												<input type="checkbox" id="jk" name="jk" value="jk">Jenis Kelamin
-											</label>
-										</div>
-										<div class="checkbox">
-											<label>
-												<input type="checkbox" id="agama" name="agama" value="agama">Agama
-											</label>
-										</div>
-										<div class="checkbox">
-											<label>
-												<input type="checkbox" id="pend_terakhir" name="pendidikan_terakhir" value="pendidikan_terakhir">Pendidikan Terakhir
-											</label>
-										</div>
-										<div class="checkbox">
-											<label>
-												<input type="checkbox" id="pekerjaan" name="pekerjaan" value="pekerjaan">Pekerjaan
-											</label>
-										</div>
-										<div class="checkbox">
-											<label>
-												<input type="checkbox" id="status_kawin" name="status_kawin" value="status_kawin">Status Perkawinan
-											</label>
-										</div>
-										<div class="checkbox">
-											<label>
-												<input type="checkbox" id="alamat" name="alamat" value="alamat">Alamat
-											</label>
-										</div>
-										<div class="checkbox">
-											<label>
-												<input type="checkbox" id="alamat_advanced" name="alamat_advanced" value="alamat_advanced">Alamat Advanced
-											</label>
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<button class="btn btn-single pull-right" style="color:#ffffff; background-color:#ff0000; border-color:#ff0000;" id="submit" name="submit" >Submit</button>
 								</div>
 							</div>
 						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -226,7 +343,37 @@
 						temp += "-pend_terakhir";
 					}
 				}
-			})
+			});
+			
+			$("#retrive").show();
+			$("#input").hide();
+			$("#update").hide();
+			
+			$("#retrive_data").click(function(){
+				//$("#retrive").attr("class","hidden");
+				//$("#input").remove(".hidden");
+				//$("#update").remove(".hidden");
+				$("#retrive").show();
+				$("#input").hide();
+				$("#update").hide();
+			});
+			$("#input_data").click(function(){
+				//$("#input").attr("class","hidden");
+				//$("#retrive").remove(".hidden");
+				//$("#update").remove(".hidden");
+				$("#input").show();
+				$("#retrive").hide();
+				$("#update").hide();
+			});
+			$("#update_data").click(function(){
+				//$("#update").attr("class","hidden");
+				//$("#retrive").remove(".hidden");
+				//$("#input").remove(".hidden");
+				$("#update").show();
+				$("#retrive").hide();
+				$("#input").hide();
+			});
+			
 		});
 		
 	</script>

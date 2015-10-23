@@ -5,13 +5,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="Xenon Boostrap Admin Panel" />
+	<meta name="description" content="One Code For All System" />
 	<meta name="author" content="" />
 	
-	<title>Food Spot</title>
-
-	<link rel="icon" href="<?= base_url();?>assets/images/icon.png" type="image/x-icon"/>
-	<link rel="shortcut icon" href="<?= base_url();?>assets/images/icon.png" type="image/x-icon"/>
+	<title>OCFA System</title>
 
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Arimo:400,700,400italic">
 	<link rel="stylesheet" href="<?= base_url();?>assets/css/fonts/linecons/css/linecons.css">
@@ -22,7 +19,8 @@
 	<link rel="stylesheet" href="<?= base_url();?>assets/css/xenon-components.css">
 	<link rel="stylesheet" href="<?= base_url();?>assets/css/xenon-skins.css">
 	<link rel="stylesheet" href="<?= base_url();?>assets/css/custom.css">
-
+	<link rel="stylesheet" href="<?= base_url();?>assets/css/jasny/jasny-bootstrap.min.css" />
+	
 	<script src="<?= base_url();?>assets/js/jquery-1.11.1.min.js"></script>
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

@@ -189,9 +189,40 @@
 													</div>
 												</div>
 												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Golongan Darah</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="goldar" id="goldar" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Tanggal Diterbitkan</label>
+													<div class="col-sm-10">
+														<div class="input-group">
+															<input class="form-control datepicker" name="tgl_terbit" id="tgl_terbit" type="text"  data-format="D, dd MM yyyy" required>
+															<div class="input-group-addon">
+																<a href="#">
+																	<i class="linecons-calendar"></i>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">NIP Pencatat</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="nip_pencatat" id="nip_pencatat" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Kewarganegaraan</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="kewarganegaraan" id="kewarganegaraan" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Agama</label>
 													<div class="col-sm-10">
-														<select name="agama" id="agama">
+														<select class="form-control" name="agama" id="agama">
 															<option disabled selected></option>
 															<option value="islam">Islam</option>
 															<option value="kristen">Kristen</option>
@@ -201,6 +232,157 @@
 															<option value="konghucu">Konghucu</option>
 															<option value="lainnya">Lainnya</option>
 														</select>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Pendidikan Terakhir</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="pend_terakhir" id="pend_terakhir" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Pekerjaan</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="pekerjaan" id="pekerjaan" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Status Perkawinan</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="status_kawin" id="status_kawin" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Alamat</label>
+													<div class="col-sm-10">
+														<textarea class="form-control" name="alamat" id="alamat"></textarea>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Alamat Advanced</label>
+													<div class="col-sm-10">
+														<textarea class="form-control" name="alamat_advanced" id="alamat_advanced"></textarea>
+													</div>
+												</div>
+												<div class="form-group">
+													<button class="btn btn-single pull-right" style="color:#ffffff; background-color:#ff0000; border-color:#ff0000;" id="submit" name="submit" >Submit</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane" id="input">
+										<div class="panel-body">
+											<div class="form-horizontal" role="form">
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">NIK</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="nik" id="field-1" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Token</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="token" id="field-1" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">NIP Pencatat</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="nip_pencatat" id="nip_pencatat" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Nama</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="nama" id="nama" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Tempat Lahir</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="t_lahir" id="t_lahir" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Tanggal Lahir</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="tgl_lahir" id="tgl_lahir" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Jenis Kelamin</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="jk" id="jk" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Golongan Darah</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="goldar" id="goldar" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Tanggal Diterbitkan</label>
+													<div class="col-sm-10">
+														<div class="input-group">
+															<input class="form-control datepicker" name="tgl_terbit" id="tgl_terbit" type="text"  data-format="D, dd MM yyyy" required>
+															<div class="input-group-addon">
+																<a href="#">
+																	<i class="linecons-calendar"></i>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Kewarganegaraan</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="kewarganegaraan" id="kewarganegaraan" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Agama</label>
+													<div class="col-sm-10">
+														<select class="form-control" name="agama" id="agama">
+															<option disabled selected></option>
+															<option value="islam">Islam</option>
+															<option value="kristen">Kristen</option>
+															<option value="katholik">Katholik</option>
+															<option value="hindu">Hindu</option>
+															<option value="budha">Budha</option>
+															<option value="konghucu">Konghucu</option>
+															<option value="lainnya">Lainnya</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Pendidikan Terakhir</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="pend_terakhir" id="pend_terakhir" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Pekerjaan</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="pekerjaan" id="pekerjaan" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Status Perkawinan</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="status_kawin" id="status_kawin" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Alamat</label>
+													<div class="col-sm-10">
+														<textarea class="form-control" name="alamat" id="alamat"></textarea>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Alamat Advanced</label>
+													<div class="col-sm-10">
+														<textarea class="form-control" name="alamat_advanced" id="alamat_advanced"></textarea>
 													</div>
 												</div>
 												<div class="form-group">

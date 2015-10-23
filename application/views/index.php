@@ -41,58 +41,58 @@
 									<div class="col-sm-10">
 										<div class="checkbox">
 											<label>
-												<input type="checkbox" name="nama" value="nama">Nama
+												<input type="checkbox" id="nama" name="nama" value="nama">Nama
 											</label>
 										</div>
 										<div class="checkbox">
 											<label>
-												<input type="checkbox" name="t_lahir" value="t_lahir">Tempat Lahir
+												<input type="checkbox" id="t_lahir" name="t_lahir" value="t_lahir">Tempat Lahir
 											</label>
 										</div>
 										<div class="checkbox">
 											<label>
-												<input type="checkbox" name="tgl_lahir" value="tgl_lahir">Tanggal Lahir
+												<input type="checkbox" id="tgl_lahir" name="tgl_lahir" value="tgl_lahir">Tanggal Lahir
 											</label>
 										</div>
 										<div class="checkbox">
 											<label>
-												<input type="checkbox" name="jk" value="jk">Jenis Kelamin
+												<input type="checkbox" id="jk" name="jk" value="jk">Jenis Kelamin
 											</label>
 										</div>
 										<div class="checkbox">
 											<label>
-												<input type="checkbox" name="agama" value="agama">Agama
+												<input type="checkbox" id="agama" name="agama" value="agama">Agama
 											</label>
 										</div>
 										<div class="checkbox">
 											<label>
-												<input type="checkbox" name="pendidikan_terakhir" value="pendidikan_terakhir">Pendidikan Terakhir
+												<input type="checkbox" id="pend_terakhir" name="pendidikan_terakhir" value="pendidikan_terakhir">Pendidikan Terakhir
 											</label>
 										</div>
 										<div class="checkbox">
 											<label>
-												<input type="checkbox" name="pekerjaan" value="pekerjaan">Pekerjaan
+												<input type="checkbox" id="pekerjaan" name="pekerjaan" value="pekerjaan">Pekerjaan
 											</label>
 										</div>
 										<div class="checkbox">
 											<label>
-												<input type="checkbox" name="status_kawin" value="status_kawin">Status Perkawinan
+												<input type="checkbox" id="status_kawin" name="status_kawin" value="status_kawin">Status Perkawinan
 											</label>
 										</div>
 										<div class="checkbox">
 											<label>
-												<input type="checkbox" name="alamat" value="alamat">Alamat
+												<input type="checkbox" id="alamat" name="alamat" value="alamat">Alamat
 											</label>
 										</div>
 										<div class="checkbox">
 											<label>
-												<input type="checkbox" name="alamat_advanced" value="alamat_advanced">Alamat Advanced
+												<input type="checkbox" id="alamat_advanced" name="alamat_advanced" value="alamat_advanced">Alamat Advanced
 											</label>
 										</div>
 									</div>
 								</div>
 								<div class="form-group">
-									<button class="btn btn-single pull-right" style="color:#ffffff; background-color:#ff0000; border-color:#ff0000;" name="submit">Submit</button>
+									<button class="btn btn-single pull-right" style="color:#ffffff; background-color:#ff0000; border-color:#ff0000;" id="submit" name="submit" >Submit</button>
 								</div>
 							</div>
 						</div>
@@ -128,4 +128,106 @@
 			</footer>
 		</div>
 	</div>
+	<script>
+		function post(path, params, method) {
+			method = method || "post"; // Set method to post by default if not specified.
+
+			// The rest of this code assumes you are not using a library.
+			// It can be made less wordy if you use one.
+			var form = document.createElement("form");
+			form.setAttribute("method", method);
+			form.setAttribute("action", path);
+
+			for(var key in params) {
+				if(params.hasOwnProperty(key)) {
+					var hiddenField = document.createElement("input");
+					hiddenField.setAttribute("type", "hidden");
+					hiddenField.setAttribute("name", key);
+					hiddenField.setAttribute("value", params[key]);
+
+					form.appendChild(hiddenField);
+				 }
+			}
+
+			document.body.appendChild(form);
+			form.submit();
+		}
+		
+		$(document).ready(function(){
+			$("#submit").click(function(){
+				var temp;
+				if($("#nama").attr("checked",true)){
+					if(temp == null){
+						temp = "nama";
+					}else{
+						temp += "-nama";
+					}
+				}
+				if($("#t_lahir").attr("checked",true)){
+					if(temp == null){
+						temp = "tempat_lahir";
+					}else{
+						temp += "-tempat_lahir";
+					}
+				}
+				if($("#tgl_lahir").attr("checked",true)){
+					if(temp == null){
+						temp = "tanggal_lahir";
+					}else{
+						temp += "-tanggal_lahir";
+					}
+				}
+				if($("#jk").attr("checked",true)){
+					if(temp == null){
+						temp = "jenis_kelamin";
+					}else{
+						temp += "-jenis_kelamin";
+					}
+				}
+				if($("#agama").attr("checked",true)){
+					if(temp == null){
+						temp = "agama";
+					}else{
+						temp += "-agama";
+					}
+				}
+				if($("#pekerjaan").attr("checked",true)){
+					if(temp == null){
+						temp = "pekerjaan";
+					}else{
+						temp += "-pekerjaan";
+					}
+				}
+				if($("#status_kawin").attr("checked",true)){
+					if(temp == null){
+						temp = "status_perkawinan";
+					}else{
+						temp += "-status_perkawinan";
+					}
+				}
+				if($("#alamat").attr("checked",true)){
+					if(temp == null){
+						temp = "alamat";
+					}else{
+						temp += "-alamat";
+					}
+				}
+				if($("#alamat_advanced").attr("checked",true)){
+					if(temp == null){
+						temp = "alamat_advanced";
+					}else{
+						temp += "-alamat_advanced";
+					}
+				}
+				if($("#pend_terakhir").attr("checked",true)){
+					if(temp == null){
+						temp = "pend_terakhir";
+					}else{
+						temp += "-pend_terakhir";
+					}
+				}
+			})
+		});
+		
+	</script>
 <?php include'footer.php'; ?>

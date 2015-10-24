@@ -153,17 +153,22 @@
 										<div class="panel-body">
 											<div class="form-horizontal" role="form">
 												<div class="form-group">
-													<label class="col-sm-2 control-label" for="field-1">NIK</label>
-													<div class="col-sm-10">
-														<input class="form-control" name="nik" id="u_nik" type="text" required>
-													</div>
-												</div>
-												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Token</label>
 													<div class="col-sm-10">
 														<input class="form-control" name="token" id="u_token" type="text" required>
 													</div>
 												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">NIK</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="nik" id="u_nik" type="text" required>
+													</div>
+												</div>
+												<div class="form-group" id="btn_nik">
+													<button class="btn btn-single pull-right" style="color:#ffffff; background-color:#ff0000; border-color:#ff0000;" id="search_nik" name="submit" >Submit</button>
+												</div>
+											</div>
+											<div id="u_afnik" class="form-horizontal hidden" role="form">
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Nama</label>
 													<div class="col-sm-10">
@@ -556,13 +561,13 @@
 				
 				$.ajax({
 					type		:"GET",
-					rl			:"http://localhost/hansip-penduduk/hansip/data?token="+$("r_token").val()+"&nik="+$("#r_nik").val()+"&field="+temp,
+					url			:"http://localhost/hansip-penduduk/hansip/data?token="+$("#r_token").val()+"&nik="+$("#r_nik").val()+"&field="+temp,
 					dataType	:"text",
 					success		:function(response){
 						var getObj = jQuery.parseJSON(response);
 						alert(getObj.nama);
 					}
-				})
+				});
 				
 			});
 			
@@ -593,6 +598,38 @@
 				$("#update").show();
 				$("#retreive").hide();
 				$("#input").hide();
+			});
+			
+			$("#search_nik").click(function(){
+				if($("#u_token").val()==""){
+					alert("Tolong isikan token terlebih dahulu");
+				}else{
+					$("#search_nik").attr("class","btn btn-single pull-right disabled");
+					$.ajax({
+						type		:"GET",
+						url			:"http://localhost/hansip-penduduk/hansip/data?token="+$("#u_token").val()+"&nik="+$("#u_nik").val()+"&field=nama-tempat_lahir-tgl_lahir-jenis_kelamin-golongan_darah-tanggal_diterbitkan-nip_pencatat-kewarganegaraan-agama-pekerjaan-status_perkawinan-alamat-alamat_advanced-pendidikan_terakhir",
+						dataType	:"text",
+						success		:function(response){
+							var hasil = jQuery.parseJSON(response);
+							$("#btn_nik").hide();
+							$("#u_afnik").attr("class","form-horizontal");
+							$("#u_nama").val(hasil.nama);
+							$("#u_t_lahir").val(hasil.tempat_lahir);
+							$("#u_tgl_lahir").val(hasil.tanggal_lahir);
+							$("#u_jk").val(hasil.jenis_kelamin);
+							$("#u_goldar").val(hasil.golongan_darah);
+							$("#u_tgl_terbit").val(hasil.tanggal_diterbitkan);
+							$("#u_nip_pencatat").val(hasil.nip_pencatat);
+							$("#u_kewarganegaraan").val(hasil.kewarganegaraan);
+							$("#u_agama").val(hasil.agama);
+							$("#u_pend_terakhir").val(hasil.pendidikan_terakhir);
+							$("#u_pekerjaan").val(hasil.pekerjaan);
+							$("#u_status_kawin").val(hasil.status_perkawinan);
+							$("#u_alamat").val(hasil.alamat);
+							$("#u_alamat_advanced").val("RT : "+hasil.rt+" RW : "+hasil.rw+" Kelurahan : "+hasil.kelurahan+" Kecamatan : "+hasil.kecamatan+" Kabupaten : "+hasil.kabupaten+" Provinsi : "+hasil.provinsi);
+						}
+					})
+				}
 			});
 			
 		});

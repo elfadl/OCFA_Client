@@ -464,7 +464,7 @@
 									</div>
 									<div class="tab-pane" id="check">
 										<div class="panel-body">
-											<div class="form-horizontal" role="form">
+											<div id="form_cek" class="form-horizontal" role="form">
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">NIK</label>
 													<div class="col-sm-10">
@@ -472,10 +472,40 @@
 													</div>
 												</div>
 												<div class="form-group" id="btn_nik">
-													<button class="btn btn-single pull-right" style="color:#ffffff; background-color:#ff0000; border-color:#ff0000;" id="search_nik" name="submit" >Cari NIK</button>
+													<button class="btn btn-single pull-right" style="color:#ffffff; background-color:#ff0000; border-color:#ff0000;" id="nik_cek" name="submit" >Cari NIK</button>
 												</div>
 											</div>
 											<div id="hasil_cek" class="form-horizontal hidden" role="form">
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Nama</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="nama" id="c_nama" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Jenis Kelamin</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="jk" id="c_jk" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Tempat Lahir</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="t_lahir" id="c_t_lahir" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Tanggal Lahir</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="tgl_lahir" id="c_tgl_lahir" type="text" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="field-1">Alamat Lengkap</label>
+													<div class="col-sm-10">
+														<input class="form-control" name="alamat" id="c_alamat" type="text" required>
+													</div>
+												</div>
 												<div class="form-group">
 													<button class="btn btn-single pull-right" style="color:#ffffff; background-color:#ff0000; border-color:#ff0000;" id="back" name="submit" >Back</button>
 												</div>
@@ -819,6 +849,31 @@
 						}
 					});
 				}
+			});
+			
+			$("#nik_cek").click(function(){
+				$.ajax({
+					type		:"GET",
+					url			:"http://localhost/hansip-penduduk/hansip/data?nik="+$("#r_nik").val(),
+					dataType	:"text",
+					success		:function(response){
+						var cek = jQuery.parseJSON(response);
+						$("#form_cek").hide();
+						$("#hasil_cek").attr("class","form-horizontal");
+						$("#c_nama").val(cek.nama);
+						$("#c_t_lahir").val(cek.tempat_lahir);
+						$("#c_tgl_lahir").val(cek.tanggal_lahir);
+						$("#c_jk").val(cek.jenis_kelamin);
+						$("#c_alamat").val(cek.alamat+" RT "+cek.rt+" RW "+cek.rw+", Kelurahan "+cek.kelurahan+", Kecamatan "+cek.kecamatan+", Kabupaten "+cek.kabupaten+", Provinsi "+cek.provinsi);
+					},
+					error:function (xhr, ajaxOptions, thrownError){
+						if(xhr.status==404) {
+							alertify.alert("Data tidak ada");
+						}else if(xhr.status==406){
+							alertify.alert("Token salah.");
+						}
+					}
+				});
 			});
 			
 			$("#back").click(function(){

@@ -229,13 +229,13 @@
 													<div class="col-sm-10">
 														<select class="form-control" name="agama" id="u_agama">
 															<option disabled selected></option>
-															<option value="islam">Islam</option>
-															<option value="kristen">Kristen</option>
-															<option value="katholik">Katholik</option>
-															<option value="hindu">Hindu</option>
-															<option value="budha">Budha</option>
-															<option value="konghucu">Konghucu</option>
-															<option value="lainnya">Lainnya</option>
+															<option id="islam" value="islam">Islam</option>
+															<option id="kristen" value="kristen">Kristen</option>
+															<option id="katholik" value="katholik">Katholik</option>
+															<option id="hindu" value="hindu">Hindu</option>
+															<option id="budha" value="budha">Budha</option>
+															<option id="konghucu" value="konghucu">Konghucu</option>
+															<option id="lainnya" value="lainnya">Lainnya</option>
 														</select>
 													</div>
 												</div>
@@ -627,6 +627,33 @@
 							$("#u_status_kawin").val(hasil.status_perkawinan);
 							$("#u_alamat").val(hasil.alamat);
 							$("#u_alamat_advanced").val("RT : "+hasil.rt+" RW : "+hasil.rw+" Kelurahan : "+hasil.kelurahan+" Kecamatan : "+hasil.kecamatan+" Kabupaten : "+hasil.kabupaten+" Provinsi : "+hasil.provinsi);
+							
+							switch(hasil.agama){
+								case "Islam":
+									$("#islam").attr("selected", true);
+									break;
+								case "Kristen":
+									$("#kristen").attr("selected", true);
+									break;
+								case "Katholik":
+									$("#katholik").attr("selected", true);
+									break;
+								case "Hindu":
+									$("#hindu").attr("selected", true);
+									break;
+								case "Budha":
+									$("#budha").attr("selected", true);
+									break;
+								case "Konghucu":
+									$("#konghucu").attr("selected", true);
+									break;
+								case "lainnya":
+									$("#lainnya").attr("selected", true);
+									break;
+								default:
+									break;
+							}
+							
 						}
 					})
 				}

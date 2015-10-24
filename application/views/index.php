@@ -54,7 +54,7 @@
 									<div class="tab-pane" id="retreive">
 										<div>
 											<div class="panel-body">
-												<div class="form-horizontal" role="form">
+												<div id="form_retreive" class="form-horizontal" role="form">
 													<div class="form-group">
 														<label class="col-sm-2 control-label" for="field-1">NIK</label>
 														<div class="col-sm-10">
@@ -145,6 +145,9 @@
 													<div class="form-group">
 														<button class="btn btn-single pull-right" style="color:#ffffff; background-color:#ff0000; border-color:#ff0000;" id="submit_retreive" name="submit" >Submit</button>
 													</div>
+												</div>
+												<div id="hasil_retreive" class="form-horizontal" role="form">
+													
 												</div>
 											</div>
 										</div>
@@ -561,11 +564,13 @@
 				
 				$.ajax({
 					type		:"GET",
-					url			:"http://localhost/hansip-penduduk/hansip/data?token="+$("#r_token").val()+"&nik="+$("#r_nik").val()+"&field="+temp,
+					url			:"http://localhost/hansip-penduduk/hansip/data?token="+$("#r_token").val()+"&nik="+$("#r_nik").val()+"&field="+temp+"&format=html",
 					dataType	:"text",
 					success		:function(response){
-						var getObj = jQuery.parseJSON(response);
-						alert(getObj.nama);
+						//var getObj = jQuery.parseJSON(response);
+						//alert(getObj.nama);
+						$("#form_retreive").hide();
+						$(response).insertAfter("#hasil_retreive");
 					}
 				});
 				

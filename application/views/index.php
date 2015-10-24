@@ -26,11 +26,11 @@
 							<div class="col-md-12">
 								<ul class="nav nav-tabs nav-tabs-justified">
 									<li class="active">
-										<a href="#retrive" id="retrive_data" data-toggle="tab">
+										<a href="#retreive" id="retreive_data" data-toggle="tab">
 											<span class="visible-xs">
 												<i class="fa-home"></i>
 											</span>
-											<span class="hidden-xs">Retrive</span>
+											<span class="hidden-xs">Retreive</span>
 										</a>
 									</li>
 									<li>
@@ -51,20 +51,20 @@
 									</li>
 								</ul>
 								<div class="tab-content">
-									<div class="tab-pane" id="retrive">
+									<div class="tab-pane" id="retreive">
 										<div>
 											<div class="panel-body">
 												<div class="form-horizontal" role="form">
 													<div class="form-group">
 														<label class="col-sm-2 control-label" for="field-1">NIK</label>
 														<div class="col-sm-10">
-															<input class="form-control" name="nik" id="field-1" type="text" required>
+															<input class="form-control" name="nik" id="r_nik" type="text" required>
 														</div>
 													</div>
 													<div class="form-group">
 														<label class="col-sm-2 control-label" for="field-1">Token</label>
 														<div class="col-sm-10">
-															<input class="form-control" name="token" id="field-1" type="text" required>
+															<input class="form-control" name="token" id="r_token" type="text" required>
 														</div>
 													</div>
 													<div class="form-group">
@@ -107,7 +107,7 @@
 															</div>
 															<div class="checkbox">
 																<label>
-																	<input type="checkbox" id="nip_pencatat" name="nip_pencatat" value="nip_pencatat">Kewarganegaraan
+																	<input type="checkbox" id="kewarganegaraan" name="kewarganegaraan" value="kewarganegaraan">Kewarganegaraan
 																</label>
 															</div>
 															<div class="checkbox">
@@ -143,7 +143,7 @@
 														</div>
 													</div>
 													<div class="form-group">
-														<button class="btn btn-single pull-right" style="color:#ffffff; background-color:#ff0000; border-color:#ff0000;" id="submit" name="submit" >Submit</button>
+														<button class="btn btn-single pull-right" style="color:#ffffff; background-color:#ff0000; border-color:#ff0000;" id="submit_retreive" name="submit" >Submit</button>
 													</div>
 												</div>
 											</div>
@@ -155,50 +155,50 @@
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">NIK</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="nik" id="field-1" type="text" required>
+														<input class="form-control" name="nik" id="u_nik" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Token</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="token" id="field-1" type="text" required>
+														<input class="form-control" name="token" id="u_token" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Nama</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="nama" id="nama" type="text" required>
+														<input class="form-control" name="nama" id="u_nama" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Tempat Lahir</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="t_lahir" id="t_lahir" type="text" required>
+														<input class="form-control" name="t_lahir" id="u_t_lahir" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Tanggal Lahir</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="tgl_lahir" id="tgl_lahir" type="text" required>
+														<input class="form-control" name="tgl_lahir" id="u_tgl_lahir" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Jenis Kelamin</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="jk" id="jk" type="text" required>
+														<input class="form-control" name="jk" id="u_jk" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Golongan Darah</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="goldar" id="goldar" type="text" required>
+														<input class="form-control" name="goldar" id="u_goldar" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Tanggal Diterbitkan</label>
 													<div class="col-sm-10">
 														<div class="input-group">
-															<input class="form-control datepicker" name="tgl_terbit" id="tgl_terbit" type="text"  data-format="D, dd MM yyyy" required>
+															<input class="form-control datepicker" name="tgl_terbit" id="u_tgl_terbit" type="text"  data-format="D, dd MM yyyy" required>
 															<div class="input-group-addon">
 																<a href="#">
 																	<i class="linecons-calendar"></i>
@@ -210,19 +210,19 @@
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">NIP Pencatat</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="nip_pencatat" id="nip_pencatat" type="text" required>
+														<input class="form-control" name="nip_pencatat" id="u_nip_pencatat" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Kewarganegaraan</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="kewarganegaraan" id="kewarganegaraan" type="text" required>
+														<input class="form-control" name="kewarganegaraan" id="u_kewarganegaraan" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Agama</label>
 													<div class="col-sm-10">
-														<select class="form-control" name="agama" id="agama">
+														<select class="form-control" name="agama" id="u_agama">
 															<option disabled selected></option>
 															<option value="islam">Islam</option>
 															<option value="kristen">Kristen</option>
@@ -237,35 +237,35 @@
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Pendidikan Terakhir</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="pend_terakhir" id="pend_terakhir" type="text" required>
+														<input class="form-control" name="pend_terakhir" id="u_pend_terakhir" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Pekerjaan</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="pekerjaan" id="pekerjaan" type="text" required>
+														<input class="form-control" name="pekerjaan" id="u_pekerjaan" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Status Perkawinan</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="status_kawin" id="status_kawin" type="text" required>
+														<input class="form-control" name="status_kawin" id="u_status_kawin" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Alamat</label>
 													<div class="col-sm-10">
-														<textarea class="form-control" name="alamat" id="alamat"></textarea>
+														<textarea class="form-control" name="alamat" id="u_alamat"></textarea>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Alamat Advanced</label>
 													<div class="col-sm-10">
-														<textarea class="form-control" name="alamat_advanced" id="alamat_advanced"></textarea>
+														<textarea class="form-control" name="alamat_advanced" id="u_alamat_advanced"></textarea>
 													</div>
 												</div>
 												<div class="form-group">
-													<button class="btn btn-single pull-right" style="color:#ffffff; background-color:#ff0000; border-color:#ff0000;" id="submit" name="submit" >Submit</button>
+													<button class="btn btn-single pull-right" style="color:#ffffff; background-color:#ff0000; border-color:#ff0000;" id="submit_update" name="submit" >Submit</button>
 												</div>
 											</div>
 										</div>
@@ -276,56 +276,56 @@
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">NIK</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="nik" id="field-1" type="text" required>
+														<input class="form-control" name="nik" id="i_nik" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Token</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="token" id="field-1" type="text" required>
+														<input class="form-control" name="token" id="i_token" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">NIP Pencatat</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="nip_pencatat" id="nip_pencatat" type="text" required>
+														<input class="form-control" name="nip_pencatat" id="i_nip_pencatat" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Nama</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="nama" id="nama" type="text" required>
+														<input class="form-control" name="nama" id="i_nama" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Tempat Lahir</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="t_lahir" id="t_lahir" type="text" required>
+														<input class="form-control" name="t_lahir" id="i_t_lahir" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Tanggal Lahir</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="tgl_lahir" id="tgl_lahir" type="text" required>
+														<input class="form-control" name="tgl_lahir" id="i_tgl_lahir" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Jenis Kelamin</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="jk" id="jk" type="text" required>
+														<input class="form-control" name="jk" id="i_jk" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Golongan Darah</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="goldar" id="goldar" type="text" required>
+														<input class="form-control" name="goldar" id="i_goldar" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Tanggal Diterbitkan</label>
 													<div class="col-sm-10">
 														<div class="input-group">
-															<input class="form-control datepicker" name="tgl_terbit" id="tgl_terbit" type="text"  data-format="D, dd MM yyyy" required>
+															<input class="form-control datepicker" name="tgl_terbit" id="i_tgl_terbit" type="text"  data-format="D, dd MM yyyy" required>
 															<div class="input-group-addon">
 																<a href="#">
 																	<i class="linecons-calendar"></i>
@@ -337,13 +337,13 @@
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Kewarganegaraan</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="kewarganegaraan" id="kewarganegaraan" type="text" required>
+														<input class="form-control" name="kewarganegaraan" id="i_kewarganegaraan" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Agama</label>
 													<div class="col-sm-10">
-														<select class="form-control" name="agama" id="agama">
+														<select class="form-control" name="agama" id="i_agama">
 															<option disabled selected></option>
 															<option value="islam">Islam</option>
 															<option value="kristen">Kristen</option>
@@ -358,35 +358,35 @@
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Pendidikan Terakhir</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="pend_terakhir" id="pend_terakhir" type="text" required>
+														<input class="form-control" name="pend_terakhir" id="i_pend_terakhir" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Pekerjaan</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="pekerjaan" id="pekerjaan" type="text" required>
+														<input class="form-control" name="pekerjaan" id="i_pekerjaan" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Status Perkawinan</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="status_kawin" id="status_kawin" type="text" required>
+														<input class="form-control" name="status_kawin" id="i_status_kawin" type="text" required>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Alamat</label>
 													<div class="col-sm-10">
-														<textarea class="form-control" name="alamat" id="alamat"></textarea>
+														<textarea class="form-control" name="alamat" id="i_alamat"></textarea>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Alamat Advanced</label>
 													<div class="col-sm-10">
-														<textarea class="form-control" name="alamat_advanced" id="alamat_advanced"></textarea>
+														<textarea class="form-control" name="alamat_advanced" id="i_alamat_advanced"></textarea>
 													</div>
 												</div>
 												<div class="form-group">
-													<button class="btn btn-single pull-right" style="color:#ffffff; background-color:#ff0000; border-color:#ff0000;" id="submit" name="submit" >Submit</button>
+													<button class="btn btn-single pull-right" style="color:#ffffff; background-color:#ff0000; border-color:#ff0000;" id="submit_input" name="submit" >Submit</button>
 												</div>
 											</div>
 										</div>
@@ -453,89 +453,128 @@
 		}
 		
 		$(document).ready(function(){
-			$("#submit").click(function(){
+			$("#submit_retreive").click(function(){
 				var temp;
-				if($("#nama").attr("checked",true)){
+				if($("#nama").is(":checked")){
 					if(temp == null){
 						temp = "nama";
 					}else{
 						temp += "-nama";
 					}
 				}
-				if($("#t_lahir").attr("checked",true)){
+				if($("#t_lahir").is(":checked")){
 					if(temp == null){
 						temp = "tempat_lahir";
 					}else{
 						temp += "-tempat_lahir";
 					}
 				}
-				if($("#tgl_lahir").attr("checked",true)){
+				if($("#tgl_lahir").is(":checked")){
 					if(temp == null){
 						temp = "tanggal_lahir";
 					}else{
 						temp += "-tanggal_lahir";
 					}
 				}
-				if($("#jk").attr("checked",true)){
+				if($("#jk").is(":checked")){
 					if(temp == null){
 						temp = "jenis_kelamin";
 					}else{
 						temp += "-jenis_kelamin";
 					}
 				}
-				if($("#agama").attr("checked",true)){
+				if($("#goldar").is(":checked")){
+					if(temp == null){
+						temp = "golongan_darah";
+					}else{
+						temp += "-golongan_darah";
+					}
+				}
+				if($("#tgl_terbit").is(":checked")){
+					if(temp == null){
+						temp = "tanggal_diterbitkan";
+					}else{
+						temp += "-tanggal_diterbitkan";
+					}
+				}
+				if($("#nip_pencatat").is(":checked")){
+					if(temp == null){
+						temp = "nip_pencatat";
+					}else{
+						temp += "-nip_pencatat";
+					}
+				}
+				if($("#kewarganegaraan").is(":checked")){
+					if(temp == null){
+						temp = "kewarganegaraan";
+					}else{
+						temp += "-kewarganegaraan";
+					}
+				}
+				if($("#agama").is(":checked")){
 					if(temp == null){
 						temp = "agama";
 					}else{
 						temp += "-agama";
 					}
 				}
-				if($("#pekerjaan").attr("checked",true)){
+				if($("#pekerjaan").is(":checked")){
 					if(temp == null){
 						temp = "pekerjaan";
 					}else{
 						temp += "-pekerjaan";
 					}
 				}
-				if($("#status_kawin").attr("checked",true)){
+				if($("#status_kawin").is(":checked")){
 					if(temp == null){
 						temp = "status_perkawinan";
 					}else{
 						temp += "-status_perkawinan";
 					}
 				}
-				if($("#alamat").attr("checked",true)){
+				if($("#alamat").is(":checked")){
 					if(temp == null){
 						temp = "alamat";
 					}else{
 						temp += "-alamat";
 					}
 				}
-				if($("#alamat_advanced").attr("checked",true)){
+				if($("#alamat_advanced").is(":checked")){
 					if(temp == null){
 						temp = "alamat_advanced";
 					}else{
 						temp += "-alamat_advanced";
 					}
 				}
-				if($("#pend_terakhir").attr("checked",true)){
+				if($("#pend_terakhir").is(":checked")){
 					if(temp == null){
-						temp = "pend_terakhir";
+						temp = "pendidikan_terakhir";
 					}else{
-						temp += "-pend_terakhir";
+						temp += "-pendidikan_terakhir";
 					}
 				}
+				
+				$.ajax({
+					type		:"GET",
+					rl			:"http://localhost/hansip-penduduk/hansip/data?token="+$("r_token").val()+"&nik="+$("#r_nik").val()+"&field="+temp,
+					dataType	:"text",
+					success		:function(response){
+						var getObj = jQuery.parseJSON(response);
+						alert(getObj.nama);
+					}
+				})
+				
 			});
 			
-			$("#retrive").show();
+			$("#retreive").show();
 			$("#input").hide();
 			$("#update").hide();
 			
-			$("#retrive_data").click(function(){
+			$("#retreive_data").click(function(){
 				//$("#retrive").attr("class","hidden");
 				//$("#input").remove(".hidden");
 				//$("#update").remove(".hidden");
-				$("#retrive").show();
+				$("#retreive").show();
 				$("#input").hide();
 				$("#update").hide();
 			});
@@ -544,7 +583,7 @@
 				//$("#retrive").remove(".hidden");
 				//$("#update").remove(".hidden");
 				$("#input").show();
-				$("#retrive").hide();
+				$("#retreive").hide();
 				$("#update").hide();
 			});
 			$("#update_data").click(function(){
@@ -552,7 +591,7 @@
 				//$("#retrive").remove(".hidden");
 				//$("#input").remove(".hidden");
 				$("#update").show();
-				$("#retrive").hide();
+				$("#retreive").hide();
 				$("#input").hide();
 			});
 			

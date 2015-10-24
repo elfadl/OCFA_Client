@@ -36,6 +36,8 @@
 
 	<!-- JavaScripts initializations and stuff -->
 	<script src="<?= base_url();?>assets/js/xenon-custom.js"></script>
+	
+	<script src="<?= base_url();?>assets/lib/alertify.min.js"></script>
 
 </body>
 </html>

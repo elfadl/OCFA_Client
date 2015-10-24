@@ -50,7 +50,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="#nik_checker" id="check_nik" data-toggle="tab">
+										<a href="#nik_checker" id="nik_checker" data-toggle="tab">
 											<span class="visible-xs">
 												<i class="fa-home"></i>
 											</span>
@@ -659,7 +659,9 @@
 					},
 					error:function (xhr, ajaxOptions, thrownError){
 						if(xhr.status==404) {
-							alert("Data tidak ada");
+							alertify.alert("Data tidak ada");
+						}else if(xhr.status==406){
+							alertify.alert("Token salah.");
 						}
 					}
 				});
@@ -668,28 +670,26 @@
 			
 			$("#submit_update").click(function(){
 				$.ajax({
-					type		:"POST",
-					url			:"http://localhost/hansip-penduduk/hansip/update?token="+$("#u_token").val()+"&nik="+$("#u_nik").val(),
-					data		: {
-									agama				: $("#u_agama").val(),
-									pendidikan_terakhir	: $("#u_pend_terakhir").val(),
-									pekerjaan			: $("#u_pekerjaan").val(),
-									status_perkawinan	: $("#u_status_kawin").val(),
-									alamat				: $("#u_alamat").val(),
-									rt					: $("#u_rt").val(),
-									rw					: $("#u_rw").val(),
-									kelurahan			: $("#u_kelurahan").val(),
-									kecamatan			: $("#u_kecamatan").val(),
-									kabupaten			: $("#u_kabupaten").val(),
-									provinsi			: $("#u_provinsi").val()
-									},
+					type		:"GET",
+					url			:"http://localhost/hansip-penduduk/hansip/update?token="+$("#u_token").val()+"&nik="+$("#u_nik").val()+"&agama="+$("#u_agama").val()+"&pendidikan_terakhir="+$("#u_pend_terakhir").val()+"&pekerjaan="+$("#u_pekerjaan").val()+"&status_perkawinan="+$("#u_status_kawin").val()+"&alamat="+$("#u_alamat").val()+"&rt="+$("#u_rt").val()+"&rw="+$("#u_rw").val()+"&kelurahan="+$("#u_kelurahan").val()+"&kecamatan="+$("#u_kecamatan").val()+"&kabupaten="+$("#u_kabupaten").val()+"&provinsi="+$("#u_provinsi").val(),
 					dataType	:"text",
 					success		:function(response){
+						//alert(response);
 						var hasil = jQuery.parseJSON(response);
+						
 						if(hasil.status == "success"){
-							alert("Data dengan NIK "+$("#u_nik").val()+" berhasil diupdate.");
+							alertify.alert("Data dengan NIK "+$("#u_nik").val()+" berhasil diupdate.");
 						}else{
-							alert("Data dengan NIK "+$("#u_nik").val()+" gagal diupdate.");
+							alertify.alert("Data dengan NIK "+$("#u_nik").val()+" gagal diupdate.");
+						}
+					},
+					error:function (xhr, ajaxOptions, thrownError){
+						if(xhr.status==404) {
+							alertify.alert("Data tidak ada");
+						}else if(xhr.status==406){
+							alertify.alert("Token salah.");
+						}else if(xhr.status==400){
+							alertify.alert("Input salah.");
 						}
 					}
 				});
@@ -698,35 +698,36 @@
 			$("#retreive").show();
 			$("#input").hide();
 			$("#update").hide();
+			$("#check").hide();
 			
 			$("#retreive_data").click(function(){
-				//$("#retrive").attr("class","hidden");
-				//$("#input").remove(".hidden");
-				//$("#update").remove(".hidden");
 				$("#retreive").show();
 				$("#input").hide();
 				$("#update").hide();
+				$("#check").hide();
 			});
 			$("#input_data").click(function(){
-				//$("#input").attr("class","hidden");
-				//$("#retrive").remove(".hidden");
-				//$("#update").remove(".hidden");
 				$("#input").show();
 				$("#retreive").hide();
 				$("#update").hide();
+				$("#check").hide();
 			});
 			$("#update_data").click(function(){
-				//$("#update").attr("class","hidden");
-				//$("#retrive").remove(".hidden");
-				//$("#input").remove(".hidden");
 				$("#update").show();
 				$("#retreive").hide();
 				$("#input").hide();
+				$("#check").hide();
+			});
+			$("#nik_checker").click(function(){
+				$("#check").show();
+				$("#retreive").hide();
+				$("#input").hide();
+				$("#update").hide();
 			});
 			
 			$("#search_nik").click(function(){
 				if($("#u_token").val()==""){
-					alert("Tolong isikan token terlebih dahulu");
+					alertify.alert("Tolong isikan token terlebih dahulu");
 				}else{
 					$("#search_nik").attr("class","btn btn-single pull-right disabled");
 					$.ajax({
@@ -735,8 +736,10 @@
 						dataType	:"text",
 						error:function (xhr, ajaxOptions, thrownError){
 							if(xhr.status==404) {
-								alert("Data tidak ada");
+								alertify.alert("Data tidak ada");
 								$("#search_nik").attr("class","btn btn-single pull-right");
+							}else if(xhr.status==406){
+								alertify.alert("Token salah.");
 							}
 						},
 						success		:function(response){

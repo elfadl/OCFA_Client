@@ -21,6 +21,9 @@
 	<link rel="stylesheet" href="<?= base_url();?>assets/css/custom.css">
 	<link rel="stylesheet" href="<?= base_url();?>assets/css/jasny/jasny-bootstrap.min.css" />
 	
+	<link rel="stylesheet" href="<?= base_url();?>assets/themes/alertify.core.css" />
+	<link rel="stylesheet" href="<?= base_url();?>assets/themes/alertify.default.css" id="toggleCSS" />
+	
 	<script src="<?= base_url();?>assets/js/jquery-1.11.1.min.js"></script>
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

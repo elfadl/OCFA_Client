@@ -479,35 +479,35 @@
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Nama</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="nama" id="c_nama" type="text" required>
+														<input class="form-control" name="nama" id="c_nama" type="text" disabled>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Jenis Kelamin</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="jk" id="c_jk" type="text" required>
+														<input class="form-control" name="jk" id="c_jk" type="text" disabled>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Tempat Lahir</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="t_lahir" id="c_t_lahir" type="text" required>
+														<input class="form-control" name="t_lahir" id="c_t_lahir" type="text" disabled>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Tanggal Lahir</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="tgl_lahir" id="c_tgl_lahir" type="text" required>
+														<input class="form-control" name="tgl_lahir" id="c_tgl_lahir" type="text" disabled>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-2 control-label" for="field-1">Alamat Lengkap</label>
 													<div class="col-sm-10">
-														<input class="form-control" name="alamat" id="c_alamat" type="text" required>
+														<textarea class="form-control" name="alamat" id="c_alamat" type="text" disabled></textarea>
 													</div>
 												</div>
 												<div class="form-group">
-													<button class="btn btn-single pull-right" style="color:#ffffff; background-color:#ff0000; border-color:#ff0000;" id="back" name="submit" >Back</button>
+													<button class="btn btn-single pull-right" style="color:#ffffff; background-color:#ff0000; border-color:#ff0000;" id="btn_back" name="submit" >Back</button>
 												</div>
 											</div>
 										</div>
@@ -854,7 +854,7 @@
 			$("#nik_cek").click(function(){
 				$.ajax({
 					type		:"GET",
-					url			:"http://localhost/hansip-penduduk/hansip/data?nik="+$("#r_nik").val(),
+					url			:"http://localhost/hansip-penduduk/hansip/data?nik="+$("#c_nik").val(),
 					dataType	:"text",
 					success		:function(response){
 						var cek = jQuery.parseJSON(response);
@@ -877,6 +877,9 @@
 			});
 			
 			$("#back").click(function(){
+				location.reload();
+			});
+			$("#btn_back").click(function(){
 				location.reload();
 			});
 			
